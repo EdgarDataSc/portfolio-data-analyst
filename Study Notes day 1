@@ -1,0 +1,154 @@
+Here's how it works:
+
+Line 1-3: SELECT picks the columns we want to see—id, name, and rating.
+
+Line 4: FROM products tells SQL which table to pull data from.
+
+Line 5: ORDER BY rating DESC sorts products by rating from highest to lowest.
+
+Line 6: LIMIT 10 restricts the results to exactly 10 rows—giving us the top 10.
+
+Ex:
+SELECT category
+FROM products;
+Here's how the code works:
+
+DISTINCT is placed immediately after SELECT and tells SQL to show only unique values from the category column. It automatically removes all duplicates.
+
+SELECT DISTINCT category
+FROM products;
+
+EX: 
+SELECT DISTINCT column_name
+FROM table_name;
+
+You can write SQL keywords in uppercase or lowercase—both work. But the convention is to use uppercase (like SELECT, DISTINCT, FROM) because it makes keywords easier to distinguish from table and column names.
+
+Exercisie:
+Write a query to find all the unique cities where our customers live. The table is called customers.
+
+SELECT DISTINCT city
+FROM  customers
+
+Ex:
+When we get the unique categories, the result column is labeled category. But we can give it a more descriptive name like unique_categories to make our output clearer and more professional.
+
+SELECT DISTINCT category AS unique_categories
+FROM products;
+
+unique_categories instead of just category—much more descriptive!
+
+Here's how it works:
+
+AS assigns a new display name to the column that comes before it
+The alias appears in your results header but doesn't change the actual column name in the database
+You place AS right after the column name, followed by your chosen alias
+
+The pattern is:
+SELECT column_1 AS alias_name
+FROM table_1;
+
+Now, when creating aliases, you want to follow some best practices:
+
+1. Descriptive: Clearly indicate what the data represents
+
+2. Valid: Use only letters, numbers, and underscores
+
+3. Readable: Use lowercase with underscores between words—this is called snake_case convention (like unique_categories)
+
+These practices make your queries professional and easy to understand. 
+
+Ex:
+SELECT city AS customer_cities
+FROM customers
+
+To connect to a database, you'll need these details:
+
+Server address: Where the database lives (URL or IP address)
+Username: Your account name
+Password: Your account password
+Database name: Which specific database to use
+When you start working at an organization, you'll get these connection details from your database administrator or IT team.
+
+Exercise 9
+
+Submit
+
+1- Why is it recommended to write SQL keywords (like SELECT, FROM, ORDER BY) in uppercase?
+
+Because it makes it easier to distinguish keywords from table and column names, improving readability
+
+
+2- What is true about the different SQL flavors used with database systems like PostgreSQL, MySQL, and BigQuery?
+
+The core SQL syntax is the same across flavors, but there are minor differences in specific features
+
+Database Server = The storage and processing powerhouse. It holds the data and does the computational work.
+
+Database Client = Your interface tool. It helps you connect, send queries, and view results—but it doesn't store data or execute queries itself.
+
+Based on this:
+
+Does the server display results in a user-friendly format, or does the client do that?
+Does the client store and process data, or does it just send your requests to the server that does the actual work?
+
+Exercise 10
+
+1- What are the primary functions of a database server? (select all that apply)
+
+To store the database
+
+To process queries sent by database clients
+
+2- What does a database client do? (select all that apply)
+
+Connects to the database server and sends SQL queries
+
+Receives and displays query results to the us
+
+Summary of the day 
+
+Finding Unique Values
+
+SELECT DISTINCT column_name
+FROM table_name;
+
+We use DISTINCT to retrieve only unique values from a column, eliminating duplicates.
+DISTINCT is placed immediately after SELECT.
+
+Column Aliasing
+
+SELECT column_1 AS alias_name,
+       column_2
+FROM table_1;
+
+The AS keyword assigns temporary names to columns in query results to improve readability.
+The alias appears in column headers but doesn't change the original database column name.
+Effective aliases should be descriptive, consistent, and use snake_case convention for best practices.
+
+SQL Style Conventions
+
+Write SQL keywords in uppercase (SELECT, FROM, ORDER BY) to distinguish them from table and column names.
+This convention improves code readability and makes queries easier to understand and maintain.
+
+SQL Flavors
+
+Different database systems use SQL flavors with the same core syntax but minor differences in specific features.
+What you learn in one system transfers easily to others, making SQL skills broadly applicable across platforms.
+
+Client-Server Architecture
+
+Database servers store and manage databases, while database clients connect to servers and send queries.
+Multiple users can connect simultaneously to the same database server through various types of clients including web applications and desktop software.
+
+You've completed Introduction to SQL!
+
+You've built a solid SQL foundation that will serve you well in your transition to data analytics. You now know how to:
+
+Query databases with SELECT, FROM, LIMIT, and ORDER BY
+Find unique values with DISTINCT
+Create professional aliases with AS
+Understand how databases and SQL clients work together
+This is a major step forward in your journey toward becoming a data analyst. Keep practicing these skills, and you'll be writing powerful queries in no time!
+
+
